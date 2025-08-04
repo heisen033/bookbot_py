@@ -1,11 +1,12 @@
-from stats import get_number_of_words
-from stats import get_number_of_each_char
-from stats import sort_dict_by_number
 from stats import report
+import sys
 
 def main():
     
-    bookpath = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    bookpath = sys.argv[1]
     
     
     report(bookpath)
